@@ -108,7 +108,7 @@ class TransactionService {
     } else if (type === 'debit') {
       // Debit: Client withdraws money, staff pays out (amount + 3% commission)
       commission = (amount * commissionRate) / 100;
-      finalAmount = amount + commission;
+      finalAmount = amount - commission;
       
       // Staff balance decreases (can go negative)
       staffBalanceAfter = staffBalanceBefore - finalAmount;
